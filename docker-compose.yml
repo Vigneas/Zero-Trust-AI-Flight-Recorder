@@ -1,0 +1,21 @@
+services:
+  lending-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: zero-trust-lending-api
+    ports:
+      - "8000:8000"
+    environment:
+      - PYTHONPATH=/app/src
+      - PYTHONUNBUFFERED=1
+    volumes:
+      # Mount receipt output to host so local auditors can inspect generated receipts
+      - ./receipt.json:/app/receipt.json
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+      start_period: 5s

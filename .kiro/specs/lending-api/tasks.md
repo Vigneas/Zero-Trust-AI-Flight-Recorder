@@ -1,0 +1,67 @@
+# Implementation Plan: Lending API
+
+- [x] 1. Environment & Data Models
+- [x] 1.1 Setup package dependencies and verify environment
+  - Ensure `fastapi`, `uvicorn`, and `httpx` are installed and accessible in the project environment.
+  - Deliverable: Active environment with ASGI and test dependencies verified.
+  - _Requirements: 1.2, 4.1_
+  - _Boundary: Environment_
+- [x] 1.2 Implement Pydantic data models with natural person identity validator (P)
+  - Create `src/lending_api/models.py` with `LoanApplicationRequest` and `LoanEvaluationResponse`.
+  - Implement validator on `applicant_id` rejecting machine/service prefixes (`svc:`, `client:`, `oauth:`, `bot:`, `system:`, `service_account:`) with a descriptive ValueError.
+  - Deliverable: `src/lending_api/models.py` with strict natural person validation.
+  - _Requirements: 1.1, 1.2, 1.3, 1.4_
+  - _Boundary: models.py_
+
+- [x] 2. Algorithmic Credit Decisioning Engine
+- [x] 2.1 Implement deterministic underwriting and risk evaluation (P)
+  - Create `src/lending_api/decision.py` implementing `evaluate_credit_risk(request)`.
+  - Calculate debt-to-income ratio, threshold checks on credit score (< 600) and excessive debt (> 60% of annual income), and assign risk tiers (`PRIME`, `NEAR_PRIME`, `SUBPRIME`, `HIGH`) with appropriate interest rates.
+  - Deliverable: `src/lending_api/decision.py` returning explainable approval/rejection outcomes.
+  - _Requirements: 2.1, 2.2_
+  - _Boundary: decision.py_
+
+- [x] 3. Article 19 Audit Record Builder & Dispatcher
+- [x] 3.1 Implement Article 19 audit record constructor (P)
+  - Create `src/lending_api/audit.py` with `build_article_19_audit_record(request, decision)`.
+  - Validate and enforce the presence of all 4 mandatory fields: `identity` (applicant natural person ID), `data_classification` (`PII_FINANCIAL_RECORDS`), `policy_version`, and `model_version`.
+  - Deliverable: Validated audit payload generator function in `src/lending_api/audit.py`.
+  - _Requirements: 2.3, 2.4, 3.1_
+  - _Boundary: audit.py_
+- [x] 3.2 Implement non-blocking, fail-open audit dispatcher (P)
+  - Implement async `dispatch_audit_event(hook, record)` in `src/lending_api/audit.py`.
+  - Isolate exceptions and catch queue saturation to guarantee fail-open behavior without raising uncaught errors.
+  - Deliverable: Asynchronous fail-open dispatch function in `src/lending_api/audit.py`.
+  - _Requirements: 3.2, 3.3, 3.4_
+  - _Boundary: audit.py_
+
+- [x] 4. FastAPI Application Endpoints & Lifespan
+- [x] 4.1 Implement application lifespan and CaptureHook management
+  - Create `src/lending_api/main.py` with FastAPI lifespan context initializing `CaptureHook` from `autonomous_lending_capture_hook` and gracefully shutting down workers.
+  - Deliverable: Core FastAPI application with hook lifecycle in `src/lending_api/main.py`.
+  - _Requirements: 3.2, 4.1_
+  - _Boundary: main.py_
+- [x] 4.2 Implement loan evaluation endpoint with background task dispatch
+  - Implement `POST /evaluate_loan` route in `src/lending_api/main.py`.
+  - Evaluate creditworthiness, schedule out-of-band audit dispatch via `fastapi.BackgroundTasks`, and return HTTP 200 response immediately.
+  - Deliverable: Tested, responsive `POST /evaluate_loan` endpoint in `src/lending_api/main.py`.
+  - _Requirements: 1.1, 1.2, 1.3, 1.4, 3.2, 3.4, 4.2_
+  - _Boundary: main.py_
+- [x] 4.3 Implement health check and observability stats endpoints
+  - Implement `GET /health` and `GET /stats` routes in `src/lending_api/main.py` exposing application status and evaluation counters.
+  - Deliverable: Operational monitoring endpoints in `src/lending_api/main.py`.
+  - _Requirements: 4.1, 4.2_
+  - _Boundary: main.py_
+
+- [x] 5. Automated Verification & Test Suite
+- [x] 5.1 Implement unit tests for models, validation, and decision engine (P)
+  - Create `tests/test_lending_api.py` covering natural person ID validation, invalid inputs, and deterministic decision branches.
+  - Deliverable: Passing unit test suite in `tests/test_lending_api.py`.
+  - _Requirements: 1.1, 1.3, 2.1, 2.2_
+  - _Boundary: tests_unit_
+- [x] 5.2 Implement integration tests for API endpoints and background hook capture
+  - Write integration tests verifying `POST /evaluate_loan`, `GET /health`, and `GET /stats` using `httpx.AsyncClient`.
+  - Verify that the background task dispatches the Article 19 audit record to the `CaptureHook` and yields sealed receipts.
+  - Deliverable: End-to-end integration tests passing with 100% success.
+  - _Requirements: 1.2, 1.4, 2.3, 2.4, 3.1, 3.2, 3.3, 3.4, 4.1, 4.2_
+  - _Boundary: tests_integration_

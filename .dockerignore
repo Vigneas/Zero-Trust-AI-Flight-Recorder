@@ -1,0 +1,12 @@
+.venv
+.git
+.gitignore
+.pytest_cache
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.vscode
+.agents
+.kiro
+merkle_state.json

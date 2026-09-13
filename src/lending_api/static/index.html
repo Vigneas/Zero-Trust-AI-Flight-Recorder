@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Northwind Cipher // Zero-Trust AI Flight Recorder</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <!-- Animated Aero Wallpaper Background Layer -->
+  <div class="wallpaper-container" id="wallpaperContainer">
+    <div class="wallpaper-media" id="wallpaperMedia"></div>
+    <div class="wallpaper-overlay"></div>
+  </div>
+
+  <!-- Ambient background lighting -->
+  <div class="glow-orb orb-1"></div>
+  <div class="glow-orb orb-2"></div>
+
+  <div class="app-container">
+    <!-- Navbar with View Navigation -->
+    <header class="navbar">
+      <div class="brand-group" id="navBrand" style="cursor: pointer;">
+        <div class="brand-badge">
+          <span class="pulse-dot"></span>
+          <span>LIVE ENGINE</span>
+        </div>
+        <div class="brand-titles">
+          <h1>NORTHWIND CIPHER <span>// FLIGHT RECORDER</span></h1>
+          <p>EU AI Act Article 19 & High-Risk Algorithmic Credit Decisioning</p>
+        </div>
+      </div>
+
+      <!-- Navigation Tabs -->
+      <nav class="nav-menu">
+        <button class="nav-tab active" data-target="home">
+          <span class="tab-dot"></span>
+          <span>Home Hub</span>
+        </button>
+        <button class="nav-tab" data-target="portal">
+          <span class="tab-num">01</span>
+          <span>Applicant Portal</span>
+        </button>
+        <button class="nav-tab" data-target="recorder">
+          <span class="tab-num">02</span>
+          <span>Flight Recorder Log</span>
+        </button>
+        <button class="nav-tab" data-target="studio">
+          <span class="tab-num">03</span>
+          <span>Auditor Studio</span>
+        </button>
+      </nav>
+
+      <div class="header-pills">
+        <a href="/static/Northwind_Cipher_Executive_Presentation.pdf" target="_blank" download class="pill pill-gold pill-link" title="Download Executive Presentation PDF for Judges">
+          <span>📄 Executive Pitch PDF</span>
+        </a>
+        <div class="pill pill-cyan">RFC 8949 CBOR</div>
+        <div class="pill pill-emerald">RFC 6962 MERKLE</div>
+        <div class="pill pill-purple">ML-DSA-65 + ED25519</div>
+      </div>
+    </header>
+
+    <!-- VIEW 0: HOME HUB (LANDING PAGE) -->
+    <section id="view-home" class="page-view active">
+      <!-- Hero Section -->
+      <div class="hero-section">
+        <div class="hero-tag">MATHEMATICALLY PROVABLE AI AUDIT EVIDENCE</div>
+        <h2 class="hero-headline">
+          Zero-Trust Flight Recorder <br>
+          <span class="gradient-text">For Autonomous Lending Decisions</span>
+        </h2>
+        <p class="hero-subtext">
+          Transforms mutable AI logs into post-quantum cryptographic receipts with zero critical-path latency overhead. Engineered to meet strict EU AI Act Article 19, DPDP Act, and RBI regulatory standards.
+        </p>
+        <div class="hero-metrics-strip">
+          <div class="hero-stat">
+            <span class="hero-stat-val" id="homeTotalEvaluations">0</span>
+            <span class="hero-stat-label">Evaluations Processed</span>
+          </div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat">
+            <span class="hero-stat-val text-emerald" id="homeMerkleLeaves">0</span>
+            <span class="hero-stat-label">Merkle Tree Leaves</span>
+          </div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat">
+            <span class="hero-stat-val text-cyan">&lt; 2 ms</span>
+            <span class="hero-stat-label">Critical Path Latency</span>
+          </div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat">
+            <span class="hero-stat-val text-purple">100%</span>
+            <span class="hero-stat-label">Air-Gapped Verifiable</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation Feature Cards (3 Portals) -->
+      <div class="portals-hub-grid">
+        <!-- Portal Card 1 -->
+        <div class="hub-card" data-target="portal">
+          <div class="hub-card-glow orb-card-1"></div>
+          <div class="hub-card-header">
+            <span class="hub-icon icon-trigger">01</span>
+            <span class="hub-badge badge-cyan">UPSTREAM TRIGGER</span>
+          </div>
+          <h3>Applicant Loan Portal</h3>
+          <p>
+            Simulate loan requests evaluated by algorithmic underwriting rules. Features strict EU AI Act natural person identity validation and sub-5ms client responses.
+          </p>
+          <ul class="hub-feature-list">
+            <li><span>✓</span> Natural person identifier verification</li>
+            <li><span>✓</span> Instant prime & subprime risk tiering</li>
+            <li><span>✓</span> Automatic out-of-band audit dispatch</li>
+          </ul>
+          <button class="btn-hub-launch">
+            <span>Enter Loan Portal</span>
+            <span class="arrow">→</span>
+          </button>
+        </div>
+
+        <!-- Portal Card 2 -->
+        <div class="hub-card" data-target="recorder">
+          <div class="hub-card-glow orb-card-2"></div>
+          <div class="hub-card-header">
+            <span class="hub-icon icon-transparency">02</span>
+            <span class="hub-badge badge-emerald">TRANSPARENCY VIEW</span>
+          </div>
+          <h3>Live Flight Recorder Log</h3>
+          <p>
+            Real-time visual feed of the append-only RFC 6962 Merkle tree. Observe new SHA-256 leaf hashes sealed out-of-band without customer latency.
+          </p>
+          <ul class="hub-feature-list">
+            <li><span>✓</span> Live Signed Tree Head (STH) root hash</li>
+            <li><span>✓</span> Real-time SHA-256 leaf hash feed</li>
+            <li><span>✓</span> Fail-open signed loss entry monitoring</li>
+          </ul>
+          <button class="btn-hub-launch">
+            <span>Open Flight Recorder</span>
+            <span class="arrow">→</span>
+          </button>
+        </div>
+
+        <!-- Portal Card 3 -->
+        <div class="hub-card" data-target="studio">
+          <div class="hub-card-glow orb-card-3"></div>
+          <div class="hub-card-header">
+            <span class="hub-icon icon-verifier">03</span>
+            <span class="hub-badge badge-purple">MATHEMATICAL PROOF</span>
+          </div>
+          <h3>Auditor Verification Studio</h3>
+          <p>
+            Air-gapped 100% in-browser cryptographic verification studio. Validate the 7 Northwind Cipher domains on any receipt with zero server trust.
+          </p>
+          <ul class="hub-feature-list">
+            <li><span>✓</span> Client-side Web Crypto SHA-256 binding</li>
+            <li><span>✓</span> Ed25519 & ML-DSA-65 post-quantum hybrid</li>
+            <li><span>✓</span> 1-Bit tamper attack detection simulator</li>
+          </ul>
+          <button class="btn-hub-launch">
+            <span>Launch Auditor Studio</span>
+            <span class="arrow">→</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- HOW IT WORKS: COOL SDK ARCHITECTURE SECTION -->
+      <div class="how-it-works-section">
+        <div class="how-header">
+          <span class="hero-tag">ENGINEERING BLUEPRINT // COOL SDK ARCHITECTURE</span>
+          <h2 class="how-title">How CooL Powers The <span class="gradient-text">Zero-Trust Flight Recorder</span></h2>
+          <p class="how-sub">
+            From high-speed credit underwriting to post-quantum Merkle sealing: explore the five architectural stages that transform mutable logs into legally admissible mathematical evidence under EU AI Act Article 19.
+          </p>
+        </div>
+
+        <!-- 2-Column Visual Architecture Showcase -->
+        <div class="pipeline-showcase-grid">
+          <!-- Left: Futuristic Holographic Pipeline Diagram -->
+          <div class="cool-image-card">
+            <div class="cool-image-frame">
+              <img src="/static/cool_pipeline_diagram.jpg" alt="CooL SDK Zero-Trust AI Flight Recorder Pipeline" class="cool-img">
+              <div class="image-scanline"></div>
+              <div class="image-corner tl"></div>
+              <div class="image-corner tr"></div>
+              <div class="image-corner bl"></div>
+              <div class="image-corner br"></div>
+            </div>
+            <div class="image-caption">
+              <span class="live-dot-pulse"></span>
+              <span>FIGURE 1.0 // NON-BLOCKING OUT-OF-BAND ARCHITECTURAL PIPELINE (ISO/IEC 42001 & EU AI ACT)</span>
+            </div>
+          </div>
+
+          <!-- Right: 5 Core Engineering Principles of CooL -->
+          <div class="cool-principles-card">
+            <div class="card-header-mini">
+              <span class="badge-cyan">5 CORE TENETS</span>
+              <h4>The CooL SDK Architectural Philosophy</h4>
+            </div>
+
+            <div class="principle-item">
+              <div class="principle-num">01</div>
+              <div class="principle-body">
+                <h5>Never Sit in the Critical Path</h5>
+                <p>The capture hook fires asynchronously into an in-memory ring buffer. Borrowers receive loan decisions in &lt; 2ms with fail-open signed loss safety.</p>
+              </div>
+            </div>
+
+            <div class="principle-item">
+              <div class="principle-num">02</div>
+              <div class="principle-body">
+                <h5>Sensitive Data Stays in Customer Boundary</h5>
+                <p>Raw PII, financial histories, and credit scores never cross external boundaries. Only deterministic cryptographic hashes are appended to the transparency log.</p>
+              </div>
+            </div>
+
+            <div class="principle-item">
+              <div class="principle-num">03</div>
+              <div class="principle-body">
+                <h5>Deterministic Canonical Serialization</h5>
+                <p>RFC 8949 Canonical CBOR enforces exact byte agreement across diverse hardware architectures, eliminating hash mismatch ambiguities.</p>
+              </div>
+            </div>
+
+            <div class="principle-item">
+              <div class="principle-num">04</div>
+              <div class="principle-body">
+                <h5>Hybrid Post-Quantum Cryptography</h5>
+                <p>Dual signatures pair classical Ed25519 (64-byte speed) with NIST FIPS 204 ML-DSA-65 (3,309-byte lattice security) to guarantee a 10-year regulatory retention horizon.</p>
+              </div>
+            </div>
+
+            <div class="principle-item">
+              <div class="principle-num">05</div>
+              <div class="principle-body">
+                <h5>RFC 6962 Merkle Transparency Tree</h5>
+                <p>Cryptographic append-only logs prove inclusion with O(log n) audit paths and prevent retroactive history rewriting through Signed Tree Heads (STH).</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5-Stage Step-by-Step Interactive Workflow Grid -->
+        <div class="steps-flow-header">
+          <span class="badge-emerald">STEP-BY-STEP EXECUTION</span>
+          <h3>Cryptographic Lifecycle of an Autonomous Credit Decision</h3>
+        </div>
+
+        <div class="architecture-steps-grid">
+          <div class="step-card">
+            <div class="step-badge step-1">STAGE 01</div>
+            <h4>Ingestion & Article 19 Guard</h4>
+            <p>Borrower submits credit application. The API validates natural person identities, rejecting machine tokens (<code>svc:*</code>, <code>client:*</code>) under EU AI Act Article 19, and executes underwriting rules in &lt; 2ms.</p>
+            <div class="step-footer">
+              <span class="step-code">POST /evaluate_loan</span>
+            </div>
+          </div>
+
+          <div class="step-arrow">→</div>
+
+          <div class="step-card">
+            <div class="step-badge step-2">STAGE 02</div>
+            <h4>Out-of-Band Capture Hook</h4>
+            <p>The CooL gateway hook intercepts the decision asynchronously into a bounded queue. Fails open on extreme load, logging signed loss entries with zero dropped loans.</p>
+            <div class="step-footer">
+              <span class="step-code">src/hook.py // Fail-Open</span>
+            </div>
+          </div>
+
+          <div class="step-arrow">→</div>
+
+          <div class="step-card">
+            <div class="step-badge step-3">STAGE 03</div>
+            <h4>Canonical CBOR & SHA-256</h4>
+            <p>Background sealer encodes the decision data into deterministic RFC 8949 CBOR bytes and computes a 256-bit binding digest that catches any 1-bit tampering.</p>
+            <div class="step-footer">
+              <span class="step-code">RFC 8949 CDE // SHA-256</span>
+            </div>
+          </div>
+
+          <div class="step-arrow">→</div>
+
+          <div class="step-card">
+            <div class="step-badge step-4">STAGE 04</div>
+            <h4>Hybrid Post-Quantum Sealing</h4>
+            <p>The record is signed simultaneously with classical Ed25519 and post-quantum ML-DSA-65 (NIST FIPS 204), ensuring 10-year quantum resilience.</p>
+            <div class="step-footer">
+              <span class="step-code">ML-DSA-65 + Ed25519</span>
+            </div>
+          </div>
+
+          <div class="step-arrow">→</div>
+
+          <div class="step-card">
+            <div class="step-badge step-5">STAGE 05</div>
+            <h4>Merkle Log & Zero-Trust Audit</h4>
+            <p>Appended to the RFC 6962 transparency tree. Regulators verify the 7 Domains directly in their browser with Web Crypto and test the 1-Bit Tamper Simulator.</p>
+            <div class="step-footer">
+              <span class="step-code">RFC 6962 // In-Browser</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Verification Banner with Audit Proof Graphic & Interactive CTA -->
+        <div class="audit-proof-banner">
+          <div class="banner-image-container">
+            <img src="/static/cool_audit_proof.jpg" alt="Cybernetic Audit Proof Verification Shield" class="banner-img">
+            <div class="banner-glow-orb"></div>
+          </div>
+          <div class="banner-content">
+            <div class="banner-tag">MATHEMATICAL NON-REPUDIATION</div>
+            <h3>Test the CooL Zero-Trust Proof Engine Yourself</h3>
+            <p>
+              Experience the power of client-side mathematical verification. Load any sealed loan evaluation receipt or simulate a malicious 1-bit database alteration to see our browser-native Web Crypto verifier catch the fraud in real time.
+            </p>
+            <div class="banner-cta-group">
+              <button class="btn-banner-primary" data-target="studio">
+                <span>Launch Auditor Verification Studio</span>
+                <span class="arrow">→</span>
+              </button>
+              <button class="btn-banner-secondary" data-target="portal">
+                <span>Evaluate a Loan in Portal</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- VIEW 1: APPLICANT LOAN PORTAL -->
+    <section id="view-portal" class="page-view">
+      <div class="page-nav-bar">
+        <button class="btn-back" data-target="home">← Back to Hub</button>
+        <span class="page-breadcrumb">Section 01 // Applicant Loan Portal</span>
+      </div>
+
+      <div class="single-portal-layout">
+        <section class="card portal-card">
+          <div class="card-header">
+            <div class="header-icon icon-trigger">01</div>
+            <div>
+              <h2>Applicant Loan Evaluation</h2>
+              <p class="subtitle">The Trigger: Algorithmic Underwriting Ingestion & Natural Person Guard</p>
+            </div>
+          </div>
+
+          <div class="preset-strip">
+            <span class="preset-label">Test Presets:</span>
+            <button type="button" class="btn-preset" id="presetPrime">Prime Applicant (Approval)</button>
+            <button type="button" class="btn-preset" id="presetSubprime">Subprime (Threshold Reject)</button>
+            <button type="button" class="btn-preset btn-preset-danger" id="presetBot">Bot Token (Attack Rejection)</button>
+          </div>
+
+          <form id="loanForm" class="form-grid">
+            <div class="form-group">
+              <label for="applicantId">Natural Person Identity (EU AI Act Article 19)</label>
+              <input type="text" id="applicantId" required placeholder="e.g. citizen-eu-98214" autocomplete="off">
+              <span class="form-hint" id="identityHint">Must represent a verified natural human person. Machine tokens (svc:*, client:*) are rejected.</span>
+            </div>
+
+            <div class="form-group">
+              <label for="applicantName">Full Legal Name</label>
+              <input type="text" id="applicantName" required placeholder="Elena Rossi">
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="annualIncome">Annual Income ($)</label>
+                <input type="number" id="annualIncome" required min="1000" step="500" placeholder="95000">
+              </div>
+              <div class="form-group">
+                <label for="creditScore">Credit Score (300-850)</label>
+                <input type="number" id="creditScore" required min="300" max="850" placeholder="780">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="requestedAmount">Requested Loan Principal ($)</label>
+              <input type="number" id="requestedAmount" required min="500" step="500" placeholder="25000">
+            </div>
+
+            <button type="submit" id="submitBtn" class="btn-primary">
+              <span class="btn-text">Submit Loan Evaluation</span>
+              <span class="btn-latency">Target: &lt; 5ms critical path</span>
+            </button>
+          </form>
+
+          <!-- Evaluation Outcome Card -->
+          <div id="decisionCard" class="decision-card hidden">
+            <div class="decision-header">
+              <span class="decision-badge" id="decisionStatusBadge">APPROVED</span>
+              <span class="decision-id" id="decisionIdLabel">ID: --</span>
+            </div>
+            <div class="decision-metrics">
+              <div class="metric-item">
+                <span class="metric-label">Risk Tier</span>
+                <span class="metric-val" id="metricRiskTier">--</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-label">Assigned APR</span>
+                <span class="metric-val" id="metricRate">--</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-label">Client Latency</span>
+                <span class="metric-val highlight" id="metricLatency">-- ms</span>
+              </div>
+            </div>
+            <div id="decisionReasonRow" class="decision-reason hidden">
+              <strong>Reason Code:</strong> <span id="decisionReasonText"></span>
+            </div>
+            <div class="out-of-band-note">
+              <div class="out-of-band-msg">
+                <span class="check-icon">✓</span> Dispatched out-of-band to Cryptographic Sealer (0ms latency impact)
+              </div>
+              <button type="button" class="btn-jump-verify" id="jumpToStudioBtn">Verify in Studio →</button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+
+    <!-- VIEW 2: LIVE FLIGHT RECORDER LOG -->
+    <section id="view-recorder" class="page-view">
+      <div class="page-nav-bar">
+        <button class="btn-back" data-target="home">← Back to Hub</button>
+        <span class="page-breadcrumb">Section 02 // Live Flight Recorder Log</span>
+      </div>
+
+      <div class="single-portal-layout">
+        <section class="card recorder-card">
+          <div class="card-header">
+            <div class="header-icon icon-transparency">02</div>
+            <div>
+              <h2>Live Transparency Engine</h2>
+              <p class="subtitle">The Transparency View: RFC 6962 Merkle Tree & Telemetry HUD</p>
+            </div>
+          </div>
+
+          <!-- Telemetry HUD -->
+          <div class="telemetry-bar">
+            <div class="stat-pill">
+              <span class="stat-num" id="statEvaluated">0</span>
+              <span class="stat-label">Evaluations</span>
+            </div>
+            <div class="stat-pill">
+              <span class="stat-num" id="statApproved">0</span>
+              <span class="stat-label">Approved</span>
+            </div>
+            <div class="stat-pill">
+              <span class="stat-num" id="statRejected">0</span>
+              <span class="stat-label">Rejected</span>
+            </div>
+            <div class="stat-pill">
+              <span class="stat-num green" id="statTreeSize">0</span>
+              <span class="stat-label">Merkle Leaves</span>
+            </div>
+            <div class="stat-pill">
+              <span class="stat-num" id="statLossCounter">0</span>
+              <span class="stat-label">Loss Entries</span>
+            </div>
+          </div>
+
+          <!-- Merkle Root Status -->
+          <div class="merkle-root-box">
+            <div class="box-title">
+              <span>SIGNED TREE HEAD (STH) ROOT HASH</span>
+              <span class="tag-live">LIVE</span>
+            </div>
+            <div class="hash-display" id="latestRootHash">
+              Calculating root hash...
+            </div>
+          </div>
+
+          <!-- Live Append-Only Leaf Stream -->
+          <div class="stream-container">
+            <div class="stream-header">
+              <span>APPEND-ONLY LEAF HASH STREAM (SHA-256)</span>
+              <span class="stream-pulse"></span>
+            </div>
+            <div class="leaf-feed" id="leafFeed">
+              <div class="feed-empty">Awaiting loan decisions to seal in Merkle transparency log...</div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+
+    <!-- VIEW 3: AUDITOR VERIFICATION STUDIO -->
+    <section id="view-studio" class="page-view">
+      <div class="page-nav-bar">
+        <button class="btn-back" data-target="home">← Back to Hub</button>
+        <span class="page-breadcrumb">Section 03 // Auditor Verification Studio</span>
+      </div>
+
+      <div class="single-portal-layout">
+        <section class="card studio-card">
+          <div class="card-header">
+            <div class="header-icon icon-verifier">03</div>
+            <div>
+              <h2>Auditor Verification Studio</h2>
+              <p class="subtitle">The Proof: Zero-Trust 100% Client-Side 7-Domain Audit</p>
+            </div>
+          </div>
+
+          <!-- Receipt Dropzone & Load Button -->
+          <div class="dropzone" id="dropzone">
+            <input type="file" id="fileInput" accept=".json" class="file-input">
+            <div class="dropzone-content">
+              <div class="dropzone-icon">⤓</div>
+              <p class="dropzone-title">Drop <code>receipt.json</code> here to verify</p>
+              <p class="dropzone-sub">or click to browse local filesystem</p>
+            </div>
+          </div>
+
+          <div class="quick-action-bar">
+            <button type="button" id="loadLatestReceiptBtn" class="btn-secondary">
+              ⚡ Verify System Receipt
+            </button>
+            <button type="button" id="toggleScriptBtn" class="btn-secondary">
+              📜 View Example System Script
+            </button>
+            <button type="button" id="tamperTestBtn" class="btn-secondary btn-outline-danger">
+              ⚠️ Simulate 1-Bit Tamper Attack
+            </button>
+          </div>
+
+          <!-- EXAMPLE SYSTEM SCRIPT & TEST SUITE PANEL (COLLAPSIBLE / TOGGLEABLE) -->
+          <div class="system-script-panel" id="systemScriptPanel">
+            <div class="panel-header">
+              <div class="panel-title">
+                <span class="panel-icon">🧪</span>
+                <span>AUDITOR SUITE: VERIFIED & UNVERIFIED EXAMPLES</span>
+              </div>
+              <span class="panel-tag">AIR-GAPPED AUDIT EXAMPLES</span>
+            </div>
+            <p class="panel-sub">
+              Select any of the 4 pre-built test cases below to simulate real-world audit scenarios directly in the browser or via CLI:
+            </p>
+
+            <!-- Grid of 4 Test Cases -->
+            <div class="test-cases-grid">
+              
+              <!-- Case 1 -->
+              <div class="test-case-card card-pass">
+                <div class="case-header">
+                  <span class="case-badge badge-pass">CASE 01 // PASS</span>
+                  <span class="case-title">Fully Verified Receipt</span>
+                </div>
+                <p class="case-desc">Valid CBOR payload, matching SHA-256 digest, Ed25519 & ML-DSA-65 signatures, Merkle proof, and natural person identity.</p>
+                <div class="case-actions">
+                  <button type="button" class="btn-case-load" id="loadCase1Btn">⚡ Load Case 1</button>
+                  <a href="/static/case1_valid.json" download="case1_valid.json" class="btn-case-dl">📥 JSON</a>
+                </div>
+              </div>
+
+              <!-- Case 2 -->
+              <div class="test-case-card card-fail">
+                <div class="case-header">
+                  <span class="case-badge badge-fail">CASE 02 // FAIL</span>
+                  <span class="case-title">Tampered Payload Hash</span>
+                </div>
+                <p class="case-desc">Single bit flipped in the SHA-256 payload digest. Fails Domain 02 (Binding) & Domain 05 (Consistency).</p>
+                <div class="case-actions">
+                  <button type="button" class="btn-case-load btn-load-danger" id="loadCase2Btn">⚠️ Load Case 2</button>
+                  <a href="/static/case2_tampered_hash.json" download="case2_tampered_hash.json" class="btn-case-dl">📥 JSON</a>
+                </div>
+              </div>
+
+              <!-- Case 3 -->
+              <div class="test-case-card card-fail">
+                <div class="case-header">
+                  <span class="case-badge badge-fail">CASE 03 // FAIL</span>
+                  <span class="case-title">Invalid Ed25519 Signature</span>
+                </div>
+                <p class="case-desc">Corrupted classical digital signature bytes. Fails Domain 03 (Signature Authentication).</p>
+                <div class="case-actions">
+                  <button type="button" class="btn-case-load btn-load-danger" id="loadCase3Btn">⚠️ Load Case 3</button>
+                  <a href="/static/case3_invalid_signature.json" download="case3_invalid_signature.json" class="btn-case-dl">📥 JSON</a>
+                </div>
+              </div>
+
+              <!-- Case 4 -->
+              <div class="test-case-card card-fail">
+                <div class="case-header">
+                  <span class="case-badge badge-fail">CASE 04 // FAIL</span>
+                  <span class="case-title">Article 19 Identity Violation</span>
+                </div>
+                <p class="case-desc">Identity is set to machine service account (<code>svc:automated_bot</code>), violating EU AI Act natural person requirements.</p>
+                <div class="case-actions">
+                  <button type="button" class="btn-case-load btn-load-danger" id="loadCase4Btn">⚠️ Load Case 4</button>
+                  <a href="/static/case4_article19_violation.json" download="case4_article19_violation.json" class="btn-case-dl">📥 JSON</a>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- CLI Command Subheading -->
+            <div class="cli-script-subheading">
+              <span>💻 AIR-GAPPED VERIFIER CLI COMMAND</span>
+            </div>
+            <div class="code-block-wrapper">
+              <pre class="code-block"><code id="scriptCodeBlock"># Run air-gapped verification directly from terminal:
+$ python src/verifier/cli.py \
+    --receipt case1_valid.json \
+    --public-key akyOBbMOxps6vQpOCK5outw7+XKm+0nZtxa/cRdzrWs= \
+    --root afe24a6a78a40f75b9546c20c7026277bfbcf11640e0eb7aadc44e2ae063e945
+
+# Or output machine-readable JSON:
+$ python src/verifier/cli.py --receipt case1_valid.json --json</code></pre>
+              <button class="btn-copy-code" id="copyScriptBtn">Copy CLI Command</button>
+            </div>
+          </div>
+
+          <!-- 1-BIT TAMPER ATTACK ANALYSIS BANNER -->
+          <div class="tamper-alert-banner hidden" id="tamperAlertBanner">
+            <div class="tamper-header">
+              <span class="tamper-badge">1-BIT TAMPER ATTACK DETECTED</span>
+              <span class="avalanche-tag">SHA-256 AVALANCHE EFFECT DEMO</span>
+            </div>
+            <div class="tamper-diff-grid">
+              <div class="diff-box">
+                <span class="diff-label">ORIGINAL CANONICAL SHA-256:</span>
+                <div class="diff-hash hash-valid" id="origHashDisplay">--</div>
+              </div>
+              <div class="diff-box">
+                <span class="diff-label">ALTERED (1-BIT FLIPPED) SHA-256:</span>
+                <div class="diff-hash hash-invalid" id="tamperedHashDisplay">--</div>
+              </div>
+            </div>
+            <div class="tamper-explanation">
+              <p>
+                <strong>Cryptographic Finding:</strong> Altering a single bit or byte in the audit log invalidates the SHA-256 binding digest. 
+                Because cryptographic hash functions exhibit strict avalanche behavior, the entire digest changes drastically, immediately breaking <strong>Domain 02 (Binding)</strong> and <strong>Domain 05 (Consistency)</strong>.
+              </p>
+            </div>
+          </div>
+
+          <!-- 7-Domain Compliance Checklist -->
+          <div class="domains-container">
+            <div class="domains-title">NORTHWIND CIPHER // SEVEN VERIFICATION DOMAINS</div>
+            <div class="domains-grid">
+
+              <div class="domain-tile" id="tileCanonical">
+                <div class="tile-header">
+                  <span class="domain-num">01</span>
+                  <span class="domain-name">Canonical</span>
+                  <span class="domain-badge badge-idle" id="badgeCanonical">WAITING</span>
+                </div>
+                <p class="domain-desc">RFC 8949 CBOR deterministic serialization</p>
+              </div>
+
+              <div class="domain-tile" id="tileBinding">
+                <div class="tile-header">
+                  <span class="domain-num">02</span>
+                  <span class="domain-name">Binding</span>
+                  <span class="domain-badge badge-idle" id="badgeBinding">WAITING</span>
+                </div>
+                <p class="domain-desc">SHA-256 payload digest match (Browser Web Crypto)</p>
+              </div>
+
+              <div class="domain-tile" id="tileSignature">
+                <div class="tile-header">
+                  <span class="domain-num">03</span>
+                  <span class="domain-name">Signature</span>
+                  <span class="domain-badge badge-idle" id="badgeSignature">WAITING</span>
+                </div>
+                <p class="domain-desc">Ed25519 & ML-DSA-65 post-quantum hybrid signatures</p>
+              </div>
+
+              <div class="domain-tile" id="tileInclusion">
+                <div class="tile-header">
+                  <span class="domain-num">04</span>
+                  <span class="domain-name">Inclusion</span>
+                  <span class="domain-badge badge-idle" id="badgeInclusion">WAITING</span>
+                </div>
+                <p class="domain-desc">RFC 6962 Merkle tree audit path validation</p>
+              </div>
+
+              <div class="domain-tile" id="tileConsistency">
+                <div class="tile-header">
+                  <span class="domain-num">05</span>
+                  <span class="domain-name">Consistency</span>
+                  <span class="domain-badge badge-idle" id="badgeConsistency">WAITING</span>
+                </div>
+                <p class="domain-desc">Monotonic append-only log verification</p>
+              </div>
+
+              <div class="domain-tile" id="tileAttestation">
+                <div class="tile-header">
+                  <span class="domain-num">06</span>
+                  <span class="domain-name">Attestation</span>
+                  <span class="domain-badge badge-simulated" id="badgeAttestation">SIMULATED</span>
+                </div>
+                <p class="domain-desc">Hardware TEE quote status (Enclave simulation mode)</p>
+              </div>
+
+              <div class="domain-tile" id="tileWitnesses">
+                <div class="tile-header">
+                  <span class="domain-num">07</span>
+                  <span class="domain-name">Witnesses</span>
+                  <span class="domain-badge badge-absent" id="badgeWitnesses">ABSENT</span>
+                </div>
+                <p class="domain-desc">Independent multi-party co-signers</p>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Verified Receipt JSON Inspector -->
+          <div class="receipt-inspector" id="receiptInspector">
+            <div class="inspector-header">
+              <span>DECODED ARTICLE 19 AUDIT RECORD</span>
+              <span class="inspector-badge" id="inspectorBadge">UNLOADED</span>
+            </div>
+            <pre id="jsonViewer"><code>// Drop a receipt above or click 'Verify System Receipt' to inspect decrypted fields</code></pre>
+          </div>
+
+        </section>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>Northwind Cipher Architecture • Reverse Hackathon Proof of Concept • EU AI Act Article 19 & DPDP Act High-Risk Credit Compliance</p>
+    </footer>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+# Implementation Plan: Verifier CLI
+
+- [x] 1. Cryptographic Verification Module
+- [x] 1.1 Implement CBOR decoding and SHA-256 hash recomputation (P)
+  - Create `src/verifier/crypto.py` with `recompute_sha256(cbor_b64)` and `verify_payload_hash(cbor_b64, expected_hash)`.
+  - Deliverable: Base64 CBOR decoder and SHA-256 verifier functions.
+  - _Requirements: 2.1, 2.2, 2.3_
+  - _Boundary: crypto.py_
+- [x] 1.2 Implement Ed25519 signature verification (P)
+  - Implement `verify_ed25519_signature(raw_bytes, sig_b64, public_key_bytes)` in `src/verifier/crypto.py`.
+  - Support public key loading from raw bytes, hex, or base64.
+  - Deliverable: Robust Ed25519 signature validation function.
+  - _Requirements: 3.1, 3.2, 3.3_
+  - _Boundary: crypto.py_
+- [x] 1.3 Implement ML-DSA-65 post-quantum signature verification (P)
+  - Implement `verify_ml_dsa_65_signature(raw_bytes, sig_b64)` in `src/verifier/crypto.py`.
+  - Validate post-quantum signature structure and simulation validity.
+  - Deliverable: ML-DSA-65 verification function.
+  - _Requirements: 3.4_
+  - _Boundary: crypto.py_
+
+- [x] 2. Merkle Proof Verification Module
+- [x] 2.1 Implement RFC 6962 Merkle inclusion proof traversal (P)
+  - Create `src/verifier/merkle.py` with `verify_merkle_inclusion_proof(leaf_hash, proof_hashes, expected_root)`.
+  - Recalculate intermediate parent hashes up the tree path to verify matching against the Signed Tree Head (STH).
+  - Deliverable: Standalone offline Merkle path validator in `src/verifier/merkle.py`.
+  - _Requirements: 4.1, 4.2, 4.3_
+  - _Boundary: merkle.py_
+
+- [x] 3. EU AI Act Article 19 Compliance Inspector
+- [x] 3.1 Implement decoded payload auditor and natural person guard (P)
+  - Create `src/verifier/compliance.py` with `audit_article_19_payload(raw_cbor_bytes)`.
+  - Inspect CBOR decoded map for `identity`, `data_classification`, `policy_version`, and `model_version`, and confirm natural person identity.
+  - Deliverable: Article 19 audit inspection module returning structured compliance results.
+  - _Requirements: 5.1, 5.2, 5.3, 5.4_
+  - _Boundary: compliance.py_
+
+- [x] 4. CLI Interface & Structured Reporting
+- [x] 4.1 Implement receipt schema ingestion and validation (P)
+  - Create `src/verifier/cli.py` with `parse_receipt_file(filepath)` and schema validation checking for mandatory receipt keys.
+  - Ensure zero network operations (100% offline air-gapped execution).
+  - Deliverable: File reader and schema parser in `src/verifier/cli.py`.
+  - _Requirements: 1.1, 1.2, 1.3_
+  - _Boundary: cli.py_
+- [x] 4.2 Implement CLI argument parsing, orchestrator, and formatters
+  - Implement `main()` in `src/verifier/cli.py` supporting `--receipt`, `--public-key`, `--root`, and `--json` flags.
+  - Output human-readable verification summary table and exit with code 0 (PASS) or code 1 (FAIL).
+  - Deliverable: Fully functional CLI entrypoint in `src/verifier/cli.py`.
+  - _Requirements: 6.1, 6.2, 6.3, 6.4_
+  - _Boundary: cli.py_
+
+- [x] 5. Automated Verification & Test Suite
+- [x] 5.1 Implement unit tests for crypto, Merkle, and compliance inspection (P)
+  - Create `tests/test_verifier.py` testing valid/tampered hashes, signatures, Merkle paths, and Article 19 checks.
+  - Deliverable: Passing unit test suite in `tests/test_verifier.py`.
+  - _Requirements: 2.1, 2.2, 2.3, 3.1, 3.2, 3.3, 3.4, 4.1, 4.2, 4.3, 5.1, 5.2, 5.3, 5.4_
+  - _Boundary: tests_unit_
+- [x] 5.2 Implement end-to-end CLI integration tests
+  - Test CLI execution against real `receipt.json`, tampered receipts, and JSON output mode.
+  - Deliverable: End-to-end CLI integration tests passing with 100% success.
+  - _Requirements: 1.1, 1.2, 1.3, 6.1, 6.2, 6.3, 6.4_
+  - _Boundary: tests_integration_
